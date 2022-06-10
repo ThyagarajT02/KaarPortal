@@ -1,0 +1,19 @@
+form{
+    position: relative;
+    top: 25%;
+}
+.form-control{
+    width:70%
+}
+h3{
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    padding: 1% 0;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;  }
+
+    div.alert.alert-danger{
+        width:70%
+    }

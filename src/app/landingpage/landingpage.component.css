@@ -1,0 +1,24 @@
+img{display: inline-block;
+height: 120px;
+position: relative;
+bottom: 30px;}
+.head{
+  padding: 20px;
+  
+}
+ul{
+    background-color: #2C3E50;
+}
+h3{
+    color: white;
+}
+div.content{
+    margin-top:4%;
+    padding:5%;
+}
+div.col{
+    margin-left: 5%;
+}
+button.btn.btn-light{
+    border:2px solid;
+}

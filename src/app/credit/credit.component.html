@@ -1,0 +1,145 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<body class="home">
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                <div class="logo">
+                    <!-- <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
+                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
+                    </a> -->
+                </div>
+                <div class="navi">
+                    <ul>
+                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a (click)="this.router.navigate(['/dashboard'])"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+						<li><a (click)="router.navigate(['/profile']);" ><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>
+                        <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
+						
+						<li><a href="#"><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a (click)="router.navigate(['/home']);"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
+                       
+					
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+                <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+                <div class="row">
+                   
+                </div>
+                <div class="user-dashboard">
+                
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 gutter">
+                           
+                           <!-- <li *ngFor="let item of message">
+                               <ol>{{item.VBELN}}</ol>
+                           </li> -->
+<h1>Credit Details</h1>
+                           <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Clearing Date</th>
+                                <th scope="col">Valuation Difference</th>
+                                <th scope="col">Account Number</th>
+                                <th scope="col">Company Code</th>
+                                <th scope="col">Line Items</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Fiscal Year</th>
+                                <th scope="col">Account Type</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Material</th>
+                                <th scope="col">Unit Of Measure</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Plant</th>
+                                <th scope="col">Indicator</th>
+                               
+                              </tr>
+                            </thead>
+                            <tbody> 
+                              <tr *ngFor="let item of credit_array"  class="table-success">
+ 
+                                <td>{{item.AUGDT}}</td>
+                                <td>{{item.BDIFF}}</td>
+                                <td>{{item.BELNR}}</td>
+                                <td>{{item.BUKRS}}</td>
+                                <td>{{item.BUZEI}}</td>
+                                <td>{{item.DMBTR}}</td>
+                                <td>{{item.GJAHR}}</td>
+                                <td>{{item.KOART}}</td>
+                                <td>{{item.KUNNR}}</td>
+                          <td>{{item.MATNR}}</td>
+                                <td>{{item.MEINS}}</td>
+                                <td>{{item.MENGE}}</td>
+                                <td>{{item.WERKS}}</td> 
+                                 <td>{{item.XBILK}}</td>
+                                <!-- <td>{{item.STORE_LOC}}</td> -->
+                               
+                              </tr>
+                            
+                            
+                            </tbody>
+                          </table> 
+							
+                          <br>
+                          <br>
+                          <h1>Debit Details</h1>
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Clearing Date</th>
+                                <th scope="col">Valuation Difference</th>
+                                <th scope="col">Account Number</th>
+                                <th scope="col">Company Code</th>
+                                <th scope="col">Line Items</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Fiscal Year</th>
+                                <th scope="col">Account Type</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Material</th>
+                                <th scope="col">Unit Of Measure</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Plant</th>
+                                <th scope="col">Indicator</th>
+                               
+                              </tr>
+                            </thead>
+                            <tbody> 
+                              <tr *ngFor="let item of debit_array"  class="table-success">
+ 
+                                <td>{{item.AUGDT}}</td>
+                                <td>{{item.BDIFF}}</td>
+                                <td>{{item.BELNR}}</td>
+                                <td>{{item.BUKRS}}</td>
+                                <td>{{item.BUZEI}}</td>
+                                <td>{{item.DMBTR}}</td>
+                                <td>{{item.GJAHR}}</td>
+                                <td>{{item.KOART}}</td>
+                                <td>{{item.KUNNR}}</td>
+                          <td>{{item.MATNR}}</td>
+                                <td>{{item.MEINS}}</td>
+                                <td>{{item.MENGE}}</td>
+                                <td>{{item.WERKS}}</td> 
+                                 <td>{{item.XBILK}}</td>
+                                <!-- <td>{{item.STORE_LOC}}</td> -->
+                               
+                              </tr>
+                            
+                            
+                            </tbody>
+                          </table> 
+                        </div>
+                        
+							  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+
