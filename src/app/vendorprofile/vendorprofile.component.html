@@ -1,0 +1,144 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<body class="home">
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                <div class="logo">
+                    <!-- <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
+                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
+                    </a> -->
+                </div>
+                <div class="navi">
+                    <ul>
+                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a (click)="this.router.navigate(['/vendordashboard'])"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+						<li><a ><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>
+                        <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
+						
+						<li><a href="#"><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
+                        <li><a (click)="sign()"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
+                       
+					
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+                <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+                <div class="row">
+                    <!-- <header>
+                        <div class="col-md-7">
+                            <nav class="navbar-default pull-left">
+                                
+                            </nav>
+                           
+                        </div>
+                        <div class="col-md-5">
+                            <div class="header-rightside">
+                             
+                            </div>
+                        </div>
+                    </header> -->
+                </div>
+                <div class="user-dashboard">
+                
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 gutter">
+                            <!-- <ul class="list-group">
+                                <li class="list-group-item disabled">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Morbi leo risus</li>
+                                <li class="list-group-item">Porta ac consectetur ac</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                              </ul> -->
+                                
+                   <div class="vp">
+                    <div class="card" style="width: 25rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"  style="font-size: 20px;">Name :{{name}}</h5>
+                          <p class="card-text">Address :{{addr}}</p>
+                          <p>City :{{city}}</p>
+                            <p>Pincode :{{pcode}}</p>
+                            <p>Country :{{country}}</p>
+                            <p>Phone  Number :{{ phno}}</p>
+                        </div>
+                      </div>
+                
+                        </div>
+                
+                            <!-- <div class="sales">
+                                <h2>Your Sale</h2>
+
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span>Period:</span> Last Year
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="#">2012</a>
+                                        <a href="#">2014</a>
+                                        <a href="#">2015</a>
+                                        <a href="#">2016</a>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!-- <div class="col-md-4 col-sm-4 col-xs-12 gutter">
+
+                            < <div class="sales report">
+                                <h2>Report</h2>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span>Period:</span> Last Year
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="#">2012</a>
+                                        <a href="#">2014</a>
+                                        <a href="#">2015</a>
+                                        <a href="#">2016</a>
+                                    </div>
+                                </div>
+                            </div> -->
+							<!-- <div class="card" style="width: 18rem;">
+								<img src="..." class="card-img-top" alt="...">
+								<div class="card-body">
+								  <h5 class="card-title">Card title</h5>
+								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								  <a  class="btn btn-primary">Go somewhere</a>
+								</div>
+							  </div>
+							  
+                        </div> --> 
+						<!-- <div class="col-md-4 col-sm-4 col-xs-12 gutter">
+
+                            <!- <div class="sales report">
+                                <h2>Report</h2>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span>Period:</span> Last Year
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="#">2012</a>
+                                        <a href="#">2014</a>
+                                        <a href="#">2015</a>
+                                        <a href="#">2016</a>
+                                    </div>
+                                </div>
+                            </div> -->
+							<!-- <div class="card" style="width: 18rem;">
+								<img src="..." class="card-img-top" alt="...">
+								<div class="card-body">
+								  <h5 class="card-title">Card title</h5>
+								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								  <a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							  </div>  -->
+							  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>

@@ -728,3 +728,27 @@ header {
     width: 100%;
 }
 }
+input.form-control{
+    display: inline;
+    position: relative;
+    margin-bottom: 3%;
+    height: 35px;
+    margin-top: 13px;
+    width: 35%;
+    
+}
+.sea{
+    width: 720px;
+    margin-top: 4%;
+    background-color: #122143;
+}
+div.user-dashboard{
+    margin-left: 7%;
+}
+.spin{
+    position: relative;
+    left: 500%;
+}
+.container-fluid a{
+    color: white;
+}

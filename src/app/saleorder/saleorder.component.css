@@ -728,3 +728,25 @@ header {
     width: 100%;
 }
 }
+.spin{
+    position: relative;
+    left: 600%;
+}
+input.form-control{
+    display: inline;
+    position: relative;
+    margin-bottom: 3%;
+    height: 35px;
+    margin-top: 13px;
+    width: 35%;
+    
+}
+.sea{
+    width: 1144px;
+    margin-top: 4%;
+    background-color: #122143;
+}
+
+div a{
+    color: white;
+}

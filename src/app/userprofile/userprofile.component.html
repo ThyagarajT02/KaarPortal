@@ -18,7 +18,7 @@
                         <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
 						
 						<li><a href="#"><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
-                        <li><a (click)="router.navigate(['/home']);"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
+                        <li><a (click)="sign()"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
                        
 					
                     </ul>
@@ -53,15 +53,30 @@
                                 <li class="list-group-item">Vestibulum at eros</li>
                               </ul> -->
                                 
-                     
-                
-							 <p>Customer ID :{{custid}}</p>
-                            <p>Address :{{addr}}</p>
+                              <div class="vp">
+                                <div class="text-center">
+                                    <div [hidden]="spinner1" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                      <span class="sr-only">Loading...</span>
+                                    </div>
+                                  </div>
+                                <div [hidden]="spinner" class="card" style="width: 25rem;">
+                                    <div class="card-body">
+                                      <h5 class="card-title"  style="font-size: 20px;">Customer ID :
+                                        
+                                        {{custid}}</h5>
+                                    
                             <p>Name :{{name}}</p>
                             <p>City :{{city}}</p>
                             <p>Pincode :{{pcode}}</p>
                             <p>Region :{{region}}</p>
                             <p>Phone  Number :{{tel}}</p> 
+                                    </div>
+                                  </div>
+                            
+                                    </div>
+                
+							 
+                            
                             <!-- <div class="sales">
                                 <h2>Your Sale</h2>
 

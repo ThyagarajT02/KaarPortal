@@ -13,17 +13,21 @@ import { CustomernumberService } from '../customernumber.service';
 })
 export class DashboardComponent implements OnInit {
   received:any
-  name:any;
+  uname:any;
   custno:any
   baseUrl : string='http://localhost:3000/profile';
   Data: any;
   constructor(private customernumber:CustomernumberService ,private userdata:UserdataService,public router: Router,private sharedata:SharedataService,private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.uname=localStorage.getItem('name');
+    // this.name=localStorage.getItem('name');
+    // console.log(this.name);
+    
     this.received=this.sharedata.getMessage();
     console.log(this.received);
    // this.cus=this.sharedata.getMessage
-   this.name=this.received[0];
+   
     
   }
 
@@ -35,7 +39,8 @@ export class DashboardComponent implements OnInit {
   }
 
  sign(){
-  this.router.navigate(['/login']);
+ localStorage.clear();
+  this.router.navigate(['/home'])
   
  }
  delivery(){
@@ -62,11 +67,20 @@ export class DashboardComponent implements OnInit {
  this.custno=this.received[1];
     console.log(this.custno);
     this.router.navigate(['/profile']);
+ 
+ }
 
-    
+ inquiry(){
+  this.customernumber.setmessage(this.received[1]);
+  console.log("data sent");
   
-   
-   
+  this.router.navigate(['/inquiry']);
+ }
+ invoice(){
+  this.customernumber.setmessage(this.received[1]);
+  console.log("data sent");
+  
+  this.router.navigate(['/invoice']);
  }
 
 }

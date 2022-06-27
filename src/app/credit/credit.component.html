@@ -18,7 +18,7 @@
                         <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
 						
 						<li><a href="#"><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
-                        <li><a (click)="router.navigate(['/home']);"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
+                        <li><a (click)="sign()"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
                        
 					
                     </ul>
@@ -37,13 +37,21 @@
                            <!-- <li *ngFor="let item of message">
                                <ol>{{item.VBELN}}</ol>
                            </li> -->
-<h1>Credit Details</h1>
-                           <table class="table">
+                        
+
+<nav class="navbar navbar-light sea" >
+  <div class="container-fluid">
+    <a class="navbar-brand">Credit</a>
+    <input type="text" class="form-control "  placeholder="Search" [(ngModel)]="search" >
+  </div>
+</nav>
+                           <table class="table" style="background-color:white;">
                             <thead>
                               <tr>
-                                <th scope="col">Clearing Date</th>
-                                <th scope="col">Valuation Difference</th>
+                                <th scope="col" (click)="sort('BELNR')">Account Number&nbsp;<i class="fa fa-sort"></i></th>
                                 <th scope="col">Account Number</th>
+                                <th scope="col">Valuation Difference</th>
+                                <th scope="col">Clearing Date</th>
                                 <th scope="col">Company Code</th>
                                 <th scope="col">Line Items</th>
                                 <th scope="col">Amount</th>
@@ -58,12 +66,15 @@
                                
                               </tr>
                             </thead>
-                            <tbody> 
-                              <tr *ngFor="let item of credit_array"  class="table-success">
+                            <tbody style="border: solid #eee;"> 
+                              <div class="spinner-border text-success spin"  style="width: 3rem; height: 3rem;"role="status" [hidden]="spinner">
+                                <span class="sr-only">Loading...</span>
+                              </div>
+                              <tr *ngFor="let item of credit_array| filter:search | orderBy:key:reverse| paginate:{itemsPerPage:8,currentPage:p}"  >
  
-                                <td>{{item.AUGDT}}</td>
-                                <td>{{item.BDIFF}}</td>
                                 <td>{{item.BELNR}}</td>
+                                <td>{{item.BDIFF}}</td>
+                                <td>{{item.AUGDT}}</td>
                                 <td>{{item.BUKRS}}</td>
                                 <td>{{item.BUZEI}}</td>
                                 <td>{{item.DMBTR}}</td>
@@ -82,16 +93,27 @@
                             
                             </tbody>
                           </table> 
+                          <pagination-controls (pageChange)="p=$event" class="pag"></pagination-controls>
 							
                           <br>
                           <br>
-                          <h1>Debit Details</h1>
-                          <table class="table">
+                         
+                          <div class="form-group col-md-4">
+                            <nav class="navbar navbar-light sea" >
+                              <div class="container-fluid">
+                                <a class="navbar-brand">Debit</a>
+                                <input type="text" class="form-control "  placeholder="Search" [(ngModel)]="searchKey" >
+                              </div>
+                            </nav>
+                          </div>
+                          <table class="table" style="background-color:white;">
                             <thead>
                               <tr>
-                                <th scope="col">Clearing Date</th>
-                                <th scope="col">Valuation Difference</th>
+                                <th scope="col" (click)="sort1('BELNR')">Account Number&nbsp;<i class="fa fa-sort"></i></th>
                                 <th scope="col">Account Number</th>
+  
+                                <th scope="col">Valuation Difference</th>
+                                <th scope="col">Clearing Date</th>
                                 <th scope="col">Company Code</th>
                                 <th scope="col">Line Items</th>
                                 <th scope="col">Amount</th>
@@ -106,12 +128,15 @@
                                
                               </tr>
                             </thead>
-                            <tbody> 
-                              <tr *ngFor="let item of debit_array"  class="table-success">
+                            <tbody style="border: solid #eee;"> 
+                              <div class="spinner-border text-success spin"  style="width: 3rem; height: 3rem;"role="status" [hidden]="spinner">
+                                <span class="sr-only">Loading...</span>
+                              </div>
+                              <tr *ngFor="let item of debit_array | filter:searchKey| orderBy:key1:reverse1" >
  
-                                <td>{{item.AUGDT}}</td>
-                                <td>{{item.BDIFF}}</td>
                                 <td>{{item.BELNR}}</td>
+                                <td>{{item.BDIFF}}</td>
+                                <td>{{item.AUGDT}}</td>
                                 <td>{{item.BUKRS}}</td>
                                 <td>{{item.BUZEI}}</td>
                                 <td>{{item.DMBTR}}</td>
@@ -130,6 +155,7 @@
                             
                             </tbody>
                           </table> 
+                          
                         </div>
                         
 							  

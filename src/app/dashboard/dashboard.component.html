@@ -14,14 +14,14 @@
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li class="active"><a ><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li><a ><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
 						<li><a (click)="free()"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>
                         <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
                         <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
 						
 						<li><a href="#"><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
+                        <li><a (click)="sign()"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
                        
 					
                     </ul>
@@ -45,13 +45,13 @@
                     <!-- </header> -->
                 </div>
                 <div class="user-dashboard">
-                    <h1>Hello, {{name}}</h1>
+                    <h1>Hello, {{uname}}</h1>
                     <div class="row">
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 							<div class="card" style="width: 18rem;">
 								
 								<div class="card-body">
-								  <h5 class="card-title">Delivery List</h5>
+								  <h5 class="card-title" style="font-size: 20px;">Delivery List</h5>
 								  <p class="card-text">
                                       <br><br>
                                   </p>
@@ -59,11 +59,11 @@
 								</div>
 							  </div>
 
-                              <div class="card" style="width: 18rem;">
+                              <div class="card test" style="width: 18rem;">
 								
 								<div class="card-body">
-								  <h5 class="card-title">Credit/Debit</h5>
-								  <p class="card-text"><br><br></p>
+								  <h5 class="card-title"  style="font-size: 20px;">Credit/Debit</h5>
+								  <p class="card-text" ><br><br></p>
 								  <a (click)="credit()" class="btn btn-primary">Click Here</a>
 								</div>
 							  </div>
@@ -102,19 +102,20 @@
 							<div class="card" style="width: 18rem;">
 								
 								<div class="card-body">
-								  <h5 class="card-title">Inquiry Details</h5>
+								  <h5 class="card-title"  style="font-size: 20px;">Inquiry Details</h5>
 								  <p class="card-text"><br><br></p>
-								  <a  class="btn btn-primary">Click Here</a>
+								  <a  (click)="inquiry()"class="btn btn-primary">Click Here</a>
 								</div>
 							  </div>
-                              <div class="card" style="width: 18rem;">
+                              <div class="card test" style="width: 18rem;">
 								
 								<div class="card-body">
-								  <h5 class="card-title">Payment Aging</h5>
+								  <h5 class="card-title"  style="font-size: 20px;">Payment Aging</h5>
 								  <p class="card-text"><br><br></p>
 								  <a (click)="pay()" class="btn btn-primary">Click Here</a>
 								</div>
 							  </div>
+                              
 							  
                         </div>
 						<div class="col-md-4 col-sm-4 col-xs-12 gutter">
@@ -136,12 +137,20 @@
 							<div class="card" style="width: 18rem;">
 								
 								<div class="card-body">
-								  <h5 class="card-title">Sales Order</h5>
+								  <h5 class="card-title"  style="font-size: 20px;">Sales Order</h5>
 								  <p class="card-text">
                                       <br>
                                       <br>
                                   </p>
 								  <a (click)="sale()" routerLinkActive="active" class="btn btn-primary">Click Here</a>
+								</div>
+							  </div>
+                              <div class="card test" style="width: 18rem;">
+								
+								<div class="card-body ">
+								  <h5 class="card-title"  style="font-size: 20px;">Invoice Details</h5>
+								  <p class="card-text"><br><br></p>
+								  <a (click)="invoice()" class="btn btn-primary">Click Here</a>
 								</div>
 							  </div>
                               

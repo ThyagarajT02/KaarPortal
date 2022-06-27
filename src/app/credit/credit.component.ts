@@ -9,6 +9,11 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class CreditComponent implements OnInit {
 received:any
+searchKey:any
+p:number=1;
+p1:number=1;
+spinner=false
+search:any
 credit:any
 debit:any
 credit_array:any=[]
@@ -17,12 +22,13 @@ debit_array:any=[]
   baseUrl : string='http://localhost:3000/credit';
   Data: any;
   ngOnInit(): any {
-    this.received=this.customernumber.getmessage();
+    this.received=localStorage.getItem('customerno');
     console.log(this.received);
     return this.http.post(this.baseUrl,{
       customerno:this.received
         }).subscribe(
           response =>{
+            this.spinner=true
             console.log(response)
             this.Data = JSON.parse(JSON.stringify(response));
             this.credit=(this.Data.IT_CRE.item);
@@ -42,5 +48,33 @@ debit_array:any=[]
         )
     
   }
+  key : string='SD_DOC';
 
+reverse:boolean = false;
+
+sort(key: string)
+
+{
+
+  this.key=key;
+
+  this.reverse = !this.reverse;
+
+}
+key1:string='';
+reverse1:boolean=false;
+sort1(key1: string)
+
+{
+
+  this.key1=key1;
+
+  this.reverse1 = !this.reverse1;
+
+}
+sign(){
+  localStorage.removeItem('customerno');
+  this.router.navigate(['/home'])
+  
+ }
 }

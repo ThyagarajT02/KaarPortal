@@ -21,13 +21,17 @@ baseUrl : string='http://localhost:3000/profile';
  pcode:any
  region:any
  tel:any
+ spinner=true
+ spinner1=false
   ngOnInit(): any{
-   this.profile= this.sharedata.getMessage()
-  this.custno=this.profile[1];
+   
+  this.custno=localStorage.getItem('customerno')
   return this.http.post(this.baseUrl,{
     customerno:this.custno
       }).subscribe(
         response =>{
+          this.spinner=false
+          this.spinner1=true
           console.log(response)
           this.Data = JSON.parse(JSON.stringify(response));
           this.custid=this.Data.IT_OUTPUT.KUNNR;
@@ -42,5 +46,10 @@ baseUrl : string='http://localhost:3000/profile';
       )
    
   }
-
+  sign(){
+  localStorage.clear();
+    this.router.navigate(['/home'])
+    
+    
+   }
 }

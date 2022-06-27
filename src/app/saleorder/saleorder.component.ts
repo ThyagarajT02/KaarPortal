@@ -10,14 +10,18 @@ import { CustomernumberService } from '../customernumber.service';
 })
 export class SaleorderComponent implements OnInit {
 message:any;
+searchKey:any
+p:number=1;
 custnumber:any
+spinner=false
   constructor(private customernumber : CustomernumberService,public router:Router,private sharedata:SharedataService,private http:HttpClient) { }
   baseUrl : string='http://localhost:3000/saleorder';
   Data: any;
   doctyp:any;
   salesdet:any
+  SD_DOC:any
   ngOnInit():any{
-   this.message= this.customernumber.getmessage()
+   this.message= localStorage.getItem('customerno')
   // this.customernumber=(this.message[1]);
    console.log(this.message);
    
@@ -25,7 +29,9 @@ custnumber:any
    return this.http.post(this.baseUrl,{
     customerno:this.message
       }).subscribe(
+       
         response =>{
+          this.spinner=true
           console.log(response)
           this.Data = JSON.parse(JSON.stringify(response));
           this.salesdet=(this.Data.E_SALESORDER.item);
@@ -38,4 +44,23 @@ custnumber:any
   }
 
 
+key : string='SD_DOC';
+
+reverse:boolean = false;
+
+sort(key: string)
+
+{
+
+  this.key=key;
+
+  this.reverse = !this.reverse;
+
+}
+
+sign(){
+  localStorage.clear();
+  this.router.navigate(['/home'])
+  
+ }
 }

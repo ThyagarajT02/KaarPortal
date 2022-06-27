@@ -1,0 +1,31 @@
+
+<h3>Vendor Portal Login</h3>
+<div class="row">
+    <div class="col-7">
+        <img src="https://fincrm.net/assets/images/industry/Client_Portal/Client_Portal-01.svg
+        "/>
+    </div>
+    <div class="col">
+        <form (ngSubmit)="submit(f)" #f="ngForm">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Vendor ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1"  ngModel name="empid" required >
+             <br>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1"  ngModel name="password" required>
+            </div>
+            <div class="form-group form-check">
+              
+             
+            </div>
+            <button type="submit"[disabled]="!f.valid" class="btn btn-primary" >Submit</button>
+<br>
+            <div [hidden]="flag"class="alert alert-danger" role="alert">
+              Invalid Credentials
+            </div>
+            
+          </form>
+    </div>
+</div>

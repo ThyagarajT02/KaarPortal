@@ -728,3 +728,12 @@ header {
     width: 100%;
 }
 }
+.vp{
+    text-align: center;
+    position: relative;
+    left: 85%;
+   padding-top: 30%;
+}
+div.card-body{
+    text-align: start;
+}

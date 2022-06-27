@@ -18,7 +18,7 @@
                         <li><a ><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
 						
 						<li><a href="#"><i class="" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span></a></li>
-                        <li><a (click)="router.navigate(['/home']);"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
+                        <li><a (click)="sign()"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">SignOut</span></a></li>
                        
 					
                     </ul>
@@ -31,62 +31,75 @@
                 </div>
                 <div class="user-dashboard">
                 
+ <nav class="navbar navbar-light sea" >
+    <div class="container-fluid">
+      <a class="navbar-brand">Payment Aging</a>
+      <input type="text" class="form-control "  placeholder="Search" [(ngModel)]="searchKey" >
+    </div>
+  </nav>
+
                     <div class="row">
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
                            
-                           <!-- <li *ngFor="let item of message">
-                               <ol>{{item.VBELN}}</ol>
-                           </li> -->
-
-                           <!-- <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">Sales Order Item</th>
-                                <th scope="col">Record Created On</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">IncoTerms</th>
-                                <th scope="col">Delivery Type</th>
-                                <th scope="col">Delivery Date</th>
-                                <th scope="col">Time Of Delivery</th>
-                                <th scope="col">Distribution Number</th>
-                                <th scope="col">Sales Org</th> -->
-                                <!-- <th scope="col">Net Value</th>
-                                <th scope="col">Purchase Number</th>
-                                <th scope="col">Required Quantity</th>
-                                <th scope="col">Sales Organization</th> --> 
-                                <!-- <th scope="col">ShipPoint</th>
-                                <th scope="col">Storage Location</th>
-
-                                <!- <th scope="col">Last</th>
-                                <th scope="col">Handle</th> -->
-                              <!-- </tr>
-                            </thead> -->
-                            <!-- <tbody>
-                              <tr *ngFor="let item of array"  class="table-success">
-                                <-- <th scope="row">1</th> -->
-                                <!-- <td>{{item.ARKTX}}</td>
-                                <td>{{item.ERDAT}}</td>
-                                <td>{{item.ERZET}}</td>
-                                <td>{{item.INCO2}}</td>
-                                <td>{{item.LFART}}</td>
-                                <td>{{item.LFDAT_V}}</td>
-                                <td>{{item.LFUHR}}</td>
-                                <td>{{item.VBELN}}</td>
-                                <td>{{item.VKORG}}</td> -->
-                                <!-- <td>{{item.NET_VALUE}}</td>
-                                <td>{{item.PURCH_NO}}</td>
-                                <td>{{item.REQ_QTY}}</td>
-                                <td>{{item.SALES_ORG}}</td> -->
-                                <!-- <td>{{item.SHIP_POINT}}</td>
-                                <td>{{item.STORE_LOC}}</td> -->
-                               
-                              <!-- </tr>
-                            
-                            
-                            </tbody>
-                          </table> -> -->
-							
+                            <table class="table" style="background-color:white;">
+                                <thead>
+                                  <tr>
+                                    <!-- <th scope="col" (click)="sort('VBELN')">Sales Document&nbsp;<i class="fa fa-sort"></i></th> -->
+                                    <th scope="col" (click)="sort('KUNNR')">Sales Document Number&nbsp;<i class="fa fa-sort"></i></th>
+                                    <th  scope="col">Customer Number</th>
+                                    <th  scope="col"> Account Document Number</th>
+                                    <th  scope="col"> Billing Date</th>
+                                    <th  scope="col"> Due Date</th>
+                                    <th  scope="col">Aging Date</th>
+                                    <!-- <th scope="col">Person Name</th>
+                                    <th scope="col">Quotation Validity</th>
+                                    <th scope="col">Valid TO Date</th>
+                                    <th scope="col">Document Date</th>
+                                    <th scope="col">Valid From</th>
+                                    <th scope="col">Valid To</th>
+                                    <th scope="col">Requested Delivery Date</th>
+                                    <th scope="col">Completed Delivery </th> -->
+                                   
+                                  </tr>
+                                </thead>
+                                <tbody style="border: solid #eee;">
+                                    <div class="spinner-border text-success spin" role="status" [hidden]="spinner">
+                                        <span class="sr-only">Loading...</span>
+                                      </div>
+                                  <tr *ngFor="let item of sales| filter:searchKey| orderBy:key:reverse |paginate:{itemsPerPage:8,currentPage:p}"  >
+                                    <!-- <th scope="row">1</th> -->
+                                    
+                                    <td >{{item.VBEL2}}</td>
+                                    <td  >{{item.KUNNR}}</td>
+                                    <td  >{{item.BELNR}}</td>
+                                    <td  >{{item.ZFBDT}}</td>
+                                    <td  >{{item.MADAT}}</td>
+                                    <td  >{{item.PSWSL}}</td>
+                                   
+                                    <!-- <td>{{item.ERDAT}}</td>
+                                    <td>{{item.ERNAM}}</td>
+                                    <td>{{item.ANGDT}}</td>
+                                    <td>{{item.BNDDT}}</td>
+                                    <td>{{item.AUDAT}}</td>
+                                    <td>{{item.GUEBG}}</td>
+                                    <td>{{item.GUEEN}}</td>
+                                    <td>{{item.VDATU}}</td>
+                                    <td>{{item.AUTLF}}</td> -->
+                                    <!-- <td>{{item.NET_VALUE}}</td>
+                                    <td>{{item.PURCH_NO}}</td>
+                                    <td>{{item.REQ_QTY}}</td>
+                                    <td>{{item.SALES_ORG}}</td> -->
+                                    <!-- <td>{{item.SHIP_POINT}}</td>
+                                    <td>{{item.STORE_LOC}}</td> -->
+                                   
+                                  </tr>
+                                
+                                
+                                </tbody>
+                              </table>
+                              <pagination-controls (pageChange)="p=$event" class="pag"></pagination-controls>
                         </div>
+
                         
 							  
                         </div>

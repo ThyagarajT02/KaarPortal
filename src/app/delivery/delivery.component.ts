@@ -9,20 +9,24 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class DeliveryComponent implements OnInit {
   received:any
+  searchKey:any
   array:any=[]
   message:any;
+  p:number=1;
   custnumber:any
   baseUrl : string='http://localhost:3000/delivery';
   Data: any;
+  spinner=false
   constructor(private http:HttpClient,public router:Router, private customernumber:CustomernumberService) { }
 
   ngOnInit(): any {
-  this.received=  this.customernumber.getmessage()
+  this.received=  localStorage.getItem('customerno')
   console.log(this.received);
   return this.http.post(this.baseUrl,{
     customerno:this.received
       }).subscribe(
         response =>{
+          this.spinner=true
           console.log(response)
           this.Data = JSON.parse(JSON.stringify(response));
           
@@ -40,5 +44,10 @@ export class DeliveryComponent implements OnInit {
         }
       )
   }
+  sign(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+    
+   }
 
 }

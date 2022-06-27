@@ -34,7 +34,8 @@ export class LoginpageComponent implements OnInit {
         this.Data = JSON.parse(JSON.stringify(response));
         console.log(this.Data.STATUS);
         if(this.Data.STATUS === 'S'){
-          //localStorage.setItem(''+user,''+password);
+        localStorage.setItem('customerno',this.empid);
+         localStorage.setItem('name',this.Data.NAME)
           this.router.navigate(['/dashboard']);
         }
         else{
